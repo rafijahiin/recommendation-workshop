@@ -1,158 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UNFPA Bangladesh – 10th CPE Recommendations Workshop</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .accordion-content { transition: max-height 0.4s ease; max-height: 0; overflow: hidden;}
-    .accordion-content.open { max-height: 2000px;}
-    .chevron { transition: transform 0.4s;}
-    .rotate-180 { transform: rotate(180deg);}
-    #toast {transition: opacity 0.3s, bottom 0.3s;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNFPA Bangladesh 10th Country Programme - Recommendations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .accordion-button.active + .accordion-content {
+            max-height: 1000px; /* Adjust as needed */
+        }
+        .unfpa-blue { background-color: #0072bc; }
+        .unfpa-orange { background-color: #f26e21; }
+        .unfpa-blue-text { color: #0072bc; }
+        .unfpa-orange-text { color: #f26e21; }
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            ring-color: #f26e21;
+            border-color: #f26e21;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-800">
 
-  <header class="bg-[#0072bc] text-white py-6 shadow-md sticky top-0 z-50">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center px-4">
-      <div class="flex items-center space-x-3">
-        <img src="https://www.unfpa.org/themes/custom/unfpa/logo.svg" class="h-10" alt="UNFPA Logo"/>
-        <span class="font-bold text-2xl tracking-tight">UNFPA Bangladesh</span>
-      </div>
-      <div class="text-right mt-2 md:mt-0">
-        <div class="text-lg font-medium">10th CPE Recommendations Workshop</div>
-        <div class="text-sm">25 September 2025 &bull; 10:00AM–12:00PM BST</div>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-5xl mx-auto px-4 py-8">
-    <h1 class="text-3xl md:text-4xl font-bold text-[#0072bc] mb-4">Recommendations & Feedback</h1>
-    <p class="mb-8 text-lg text-gray-700">Review each key recommendation and submit your input. All suggestions are securely collected for analysis.</p>
-
-    <div id="accordion-group" class="space-y-6">
-      <!-- START: Recommendations -->
-      <!-- Repeat this block for each recommendation (content from your file) -->
-      <!-- 1 -->
-      <div class="border rounded-xl shadow-sm bg-white">
-        <button type="button" class="w-full flex justify-between items-center p-5 text-left font-semibold text-[#0072bc] focus:outline-none accordion-toggle">
-          <span>1. ToC to articulate a stronger systems approach</span>
-          <svg class="chevron w-5 h-5 ml-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div class="accordion-content px-6 pb-6">
-          <p class="text-gray-800 mb-3 mt-2">Adopt a unified, risk-informed Umbrella ToC that integrates the HDP nexus and system-strengthening. It makes megatrends and risk-to-budget choices explicit, clarifies shared outcomes and cross-thematic dependencies (HRH, supply chains, QA/supervision, referrals), and positions population data to steer policy and finance built to technical quality (clear assumptions, indicators, learning loops) as a live strategic-management tool.</p>
-          <div class="text-sm text-gray-600 mb-2"><b>Priority:</b> High</div>
-          <div class="text-sm text-gray-600 mb-2"><b>Rationale:</b> One Umbrella ToC gives the country programme a single, shared map for joint strategic monitoring and decision-making, replacing siloed thematic views with a common results frame that everyone co-owns. It aligns AWPs and budgets to the same outcomes and risks, enables timely cross-team course-correction, and anchors performance dialogues with government and partners. In periods of anticipated change (policy, climate, financing), the shared ToC also drives structured adaptive management—with pre-agreed triggers, scenario options, and a routine ToC review cadence—so the office’s proven agility becomes systematic practice.</div>
-          <div class="text-sm text-gray-600 mb-2"><b>Operational Implications:</b>
-            <ul class="list-disc pl-5">
-              <li>Run a 4–6 week co-design sprint mapping HDP phases, megatrends, system functions, indicators, and risks.</li>
-              <li>Map all outputs/AWPs/budget lines to ToC; full alignment by Q3–Q4; gate new pilots until mapped.</li>
-              <li>Monthly joint reviews with ToC Steward, Programme+Ops+M&E+Humanitarian, version control ToC changes.</li>
-              <li>Minimal dashboard: 10–12 indicators, system floors tracked quarterly.</li>
-              <li>Pre-set contingency/pre-positioning lines, scenario playbooks, bridge financing during transition year.</li>
-              <li>Update all IP MoUs/ToRs to Umbrella ToC; joint ToC review on assumptions/risks & equity results.</li>
-            </ul>
-          </div>
-          <!-- Feedback Form -->
-          <form class="feedback-form mt-6 space-y-4" action="https://formcarry.com/s/864H9L4RdcM" method="POST">
-            <input type="hidden" name="Recommendation" value="1: ToC to articulate a stronger systems approach" />
-            <div>
-              <label class="block text-sm font-medium mb-1">Your Name</label>
-              <input required name="Name" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0072bc]" placeholder="Full Name" type="text" />
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="https://www.unfpa.org/sites/default/files/logo_unfpa_blue_2.png" alt="UNFPA Logo" class="h-12">
+                <h1 class="text-xl md:text-2xl font-bold text-gray-700 hidden md:block">
+                    <span class="unfpa-blue-text">UNFPA</span> Bangladesh
+                </h1>
             </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Your Email</label>
-              <input required name="Email" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0072bc]" placeholder="your@email.com" type="email" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Suggestion or Comment</label>
-              <textarea required name="Suggestion" rows="4" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0072bc]" placeholder="Your feedback..."></textarea>
-            </div>
-            <button type="submit" class="bg-[#0072bc] text-white px-5 py-2 rounded-lg font-semibold hover:bg-[#005a9c] transition w-full md:w-auto">Submit Feedback</button>
-          </form>
+            <h2 class="text-sm md:text-lg font-semibold text-gray-600 text-right">10th Country Programme (2022-2026) Evaluation</h2>
         </div>
-      </div>
-      <!-- 2 -->
-      <div class="border rounded-xl shadow-sm bg-white">
-        <button type="button" class="w-full flex justify-between items-center p-5 text-left font-semibold text-[#0072bc] focus:outline-none accordion-toggle">
-          <span>2. Replication and scaling-up</span>
-          <svg class="chevron w-5 h-5 ml-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div class="accordion-content px-6 pb-6">
-          <p class="text-gray-800 mb-3 mt-2">Standardize &rarr; budgetize proven SRHR/GBV/A&Y models and data. Turn validated models and standards (midwifery protocols, GBV clinical pathways, referral closure, DHIS2/PD products) into the national routine by codifying them in norms/QA tools and assigning budget codes and packaging them for policy uptake (gazette/indicator compendium) and cross-country replication via South-South & Triangular Cooperation (SSTC).</p>
-          <div class="text-sm text-gray-600 mb-2"><b>Priority:</b> High</div>
-          <div class="text-sm text-gray-600 mb-2"><b>Rationale:</b> Scaling is durable when excellence is standardized, budgetized, and codified so ministries can adopt beyond pilot sites. Linking PD evidence to budget classifications turns analysis into allocation and sharpens equity (including adolescents and PwD). SSTC provides the diffusion engine (peer learning, cost benchmarking, pooled procurement), while systematization of good practices and lessons converts tacit knowledge into concise, reusable packages, accelerating policy uptake, quality, and replication.</div>
-          <div class="text-sm text-gray-600 mb-2"><b>Operational Implications:</b>
-            <ul class="list-disc pl-5">
-              <li>Define standard package: one spec per model (norms/QA, indicators, referral closure).</li>
-              <li>Map to money (Q2): confirm budget codes/AWP lines for each package.</li>
-              <li>QA toolkit + simple fidelity score; supervision, DHIS2 completeness, equity fields filled.</li>
-              <li>Replication kit: policy brief, cost note, SOPs, indicator addendum, short explainer; policy circular/gazette and SSTC twinning.</li>
-              <li>Quarterly harvest of good practices/lessons → validation → short case notes → updates to SOPs/indicator compendium & kits.</li>
-              <li>Adoption dashboard on adoption–quality–equity, with thresholds for scale-up.</li>
-              <li>Require IP use of national QA toolkit and submission of fidelity score.</li>
-            </ul>
-          </div>
-          <form class="feedback-form mt-6 space-y-4" action="https://formcarry.com/s/864H9L4RdcM" method="POST">
-            <input type="hidden" name="Recommendation" value="2: Replication and scaling-up" />
-            <div>
-              <label class="block text-sm font-medium mb-1">Your Name</label>
-              <input required name="Name" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0072bc]" placeholder="Full Name" type="text" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Your Email</label>
-              <input required name="Email" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0072bc]" placeholder="your@email.com" type="email" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Suggestion or Comment</label>
-              <textarea required name="Suggestion" rows="4" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0072bc]" placeholder="Your feedback..."></textarea>
-            </div>
-            <button type="submit" class="bg-[#0072bc] text-white px-5 py-2 rounded-lg font-semibold hover:bg-[#005a9c] transition w-full md:w-auto">Submit Feedback</button>
-          </form>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8 md:py-12">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold unfpa-blue-text mb-2">Country Programme Evaluation Recommendations</h1>
+            <p class="text-gray-600 max-w-3xl mx-auto">Review the key recommendations from the evaluation and provide your valuable feedback to help shape future initiatives.</p>
         </div>
-      </div>
-      <!-- Repeat similar blocks for 3–6 (content from your doc) -->
 
-      <!-- Add your other recommendations below, following the above structure. -->
+        <!-- Recommendations Section -->
+        <section id="recommendations" class="space-y-4 mb-16">
+            <!-- Recommendations will be dynamically inserted here -->
+        </section>
 
-    </div>
-  </main>
+        <!-- Suggestion Form Section -->
+        <section id="suggestion-form" class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold unfpa-blue-text">Provide Your Suggestions</h2>
+                <p class="text-gray-600 mt-2">Your insights are crucial for refining these recommendations.</p>
+            </div>
+            
+            <form id="feedbackForm" class="max-w-2xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 form-input" placeholder="e.g., John Doe">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 form-input" placeholder="e.g., john.doe@example.com">
+                    </div>
+                </div>
 
-  <footer class="bg-[#0072bc] text-white py-5 mt-10 text-center">
-    <div class="text-sm">&copy; 2025 United Nations Population Fund (UNFPA) Bangladesh</div>
-  </footer>
+                <div class="mb-6">
+                    <label for="recommendation-select" class="block text-sm font-medium text-gray-700 mb-1">Select Recommendation</label>
+                    <select id="recommendation-select" name="recommendation" required class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 form-input bg-white">
+                        <option value="" disabled selected>Choose a recommendation to comment on...</option>
+                        <!-- Options will be dynamically inserted here -->
+                    </select>
+                </div>
 
-  <div id="toast" class="fixed left-1/2 bottom-10 -translate-x-1/2 z-50 bg-green-600 text-white px-6 py-3 rounded-xl opacity-0 pointer-events-none text-center"></div>
+                <div class="mb-6">
+                    <label for="suggestion" class="block text-sm font-medium text-gray-700 mb-1">Your Suggestion</label>
+                    <textarea id="suggestion" name="suggestion" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 form-input" placeholder="Please provide your detailed suggestion here..."></textarea>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="unfpa-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
+                        Submit Suggestion
+                    </button>
+                </div>
+            </form>
+            <div id="form-message" class="mt-4 text-center"></div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="container mx-auto px-6 py-6 text-center">
+            <p>&copy; <span id="currentYear"></span> United Nations Population Fund (UNFPA) Bangladesh. All rights reserved.</p>
+        </div>
+    </footer>
 
-  <script>
-    // Accordion logic
-    document.querySelectorAll('.accordion-toggle').forEach((btn, idx, all) => {
-      btn.addEventListener('click', () => {
-        all.forEach((b, i) => {
-          const panel = b.parentElement.querySelector('.accordion-content');
-          const chev = b.querySelector('.chevron');
-          if(b === btn){
-            const open = panel.classList.toggle('open');
-            chev.classList.toggle('rotate-180', open);
-          } else {
-            panel.classList.remove('open');
-            chev.classList.remove('rotate-180');
-          }
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const recommendationsData = [
+                {
+                    title: "ToC to articulate a stronger systems",
+                    priority: "High",
+                    recommendationText: "Adopt a unified, risk-informed Umbrella ToC that integrates the HDP nexus and system-strengthening. It makes megatrends and risk-to-budget choices explicit, clarifies shared outcomes and cross-thematic dependencies (HRH, supply chains, QA/supervision, referrals), and positions population data to steer policy and finance built to technical quality (clear assumptions, indicators, learning loops) as a live strategic-management tool.",
+                    rationale: "One Umbrella ToC gives the country programme a single, shared map for joint strategic monitoring and decision-making, replacing siloed thematic views with a common results frame that everyone co-owns. It aligns AWPs and budgets to the same outcomes and risks, enables timely cross-team course-correction, and anchors performance dialogues with government and partners. In periods of anticipated change (policy, climate, financing), the shared ToC also drives structured adaptive management—with pre-agreed triggers, scenario options, and a routine ToC review cadence—so the office’s proven agility becomes systematic practice.",
+                    implications: [
+                        "Design the Umbrella ToC: run a 4–6 week co-design sprint.",
+                        "Transition roll-in plan: Q2 map all outputs/AWPs/budget lines to the ToC.",
+                        "One governance & review table: appoint a ToC Steward; hold monthly joint reviews.",
+                        "Minimal joint dashboard: 10–12 core indicators tracked quarterly.",
+                        "Risk-to-budget mechanics: pre-set contingency/pre-positioning lines.",
+                        "Update all IP MoUs/ToRs to the Umbrella ToC."
+                    ]
+                },
+                {
+                    title: "Replication and scaling-up",
+                    priority: "High",
+                    recommendationText: "Turn validated models and standards (midwifery protocols, GBV clinical pathways, referral closure, DHIS2/PD products) into the national routine by codifying them in norms/QA tools and assigning budget codes and packaging them for policy uptake (gazette/indicator compendium) and cross-country replication via South-South & Triangular Cooperation (SSTC).",
+                    rationale: "Scaling is durable when excellence is standardized, budgetized, and codified so ministries can adopt beyond pilot sites. Linking PD evidence to budget classifications turns analysis into allocation and sharpens equity. SSTC provides the diffusion engine, accelerating policy uptake, quality, and replication.",
+                    implications: [
+                        "Define the standard package for each model.",
+                        "Map to money: confirm budget codes/AWP lines.",
+                        "Establish Quality & fidelity toolkit and scoring.",
+                        "Create a communication & transfer replication kit.",
+                        "Implement a systematization loop for quarterly harvesting of good practices.",
+                        "Track adoption quarterly with a dedicated dashboard."
+                    ]
+                },
+                {
+                    title: "Effective LNOB (Leave No One Behind)",
+                    priority: "High",
+                    recommendationText: "Make equity visibility & performance non-negotiable. Complete disability and marginalized fields across DHIS2/MPDSR/GBV information systems and adopt a lean LNOB indicator pack with explicit targets—% of adolescents, PWD, and marginalized reached, referral-closure rates, facility accessibility compliance, data-completeness, and equity-tagged spend.",
+                    rationale: "Transformational change needs more than disaggregation; it needs goals you manage to. A country-owned LNOB indicator set makes distributional effects visible, sets clear targets, and hard-wires course-correction into management. Using standard approaches ensures comparability and protects privacy.",
+                    implications: [
+                        "Define LNOB indicator pack (5-7 tracers).",
+                        "Set national + district targets & minimum floors in AWPs.",
+                        "Create a ToC-linked monitoring loop with monthly dashboards.",
+                        "Conduct data quality & safeguards training.",
+                        "Link equity floors to disbursement calendars.",
+                        "Insert LNOB targets/floors in IP MoUs."
+                    ]
+                },
+                {
+                    title: "Continuity and efficiency",
+                    priority: "High",
+                    recommendationText: "Fix execution bottlenecks to protect timeliness, equity, and value for money. Align cash release, approvals/ERP, procurement, and last-mile logistics to one delivery calendar so services flow steadily, unit costs fall, and LNOB lines are not crowded out.",
+                    rationale: "Stop–start delivery inflates costs, weakens quality, and disproportionately harms LNOB outreach. Predictable disbursement and procurement are core determinants of results and Value for Money (VfM), converting planned outputs into real, equitable coverage.",
+                    implications: [
+                        "Create one delivery calendar with locked schedules.",
+                        "Establish lead-time & stock floors with procurement SLAs.",
+                        "Standardize last-mile basics like tracking and handoffs.",
+                        "Align forecasting & Sales and Operations Planning (S&OP).",
+                        "Use a ToC-linked ops dashboard to track key metrics."
+                    ]
+                },
+                {
+                    title: "From funding to financing",
+                    priority: "High",
+                    recommendationText: "Move from short-cycle, projectized funding to domestically anchored, multi-year financing. Agree a compact with MoF/ERD, costing policy wins into MTEF/budget codes/AWPs, and tracking Value-for-Money/Return-on-Investment and benefit incidence for marginalized groups.",
+                    rationale: "Durable results require appropriations, not ad-hoc grants. Financing coded in MTEF and executed through routine budgets stabilizes service continuity and protects LNOB lines. A clear compact with finance authorities translates evidence into fiscal commitments.",
+                    implications: [
+                        "Agree on a Funding-to-Financing roadmap with MoF/ERD.",
+                        "Cost & code policy wins and assign MTEF/budget codes.",
+                        "Expand pooled procurement and introduce a lite VfM/ROI pack.",
+                        "Set equity floors and benefit-incidence targets.",
+                        "Pre-arrange bridge financing to avoid Q4 compression."
+                    ]
+                },
+                {
+                    title: "From innovations to strategic innovation",
+                    priority: "Medium-High",
+                    recommendationText: "Treat innovation as mission-aligned, ToC-linked strategic innovation—not ad-hoc pilots—guided by one Innovation-to-Scale Protocol, a light innovation registry, and inclusion/safety gates. Package validated models for policy uptake and SSTC replication.",
+                    rationale: "Strategic innovation focuses scarce resources on problems that matter for the Umbrella ToC, producing decision-grade evidence. It shifts the mindset from scattered piloting to structured validation and scale, strengthening the normative role and investability.",
+                    implications: [
+                        "Stand up the Innovation-to-Scale protocol and review board.",
+                        "Require equity & safety gates before scaling.",
+                        "Maintain a registry and create evidence briefs.",
+                        "Enable budget & procurement for validated innovations.",
+                        "Use a ToC-linked scale dashboard to track adoption.",
+                        "Run IP pilots as time-boxed innovation labs."
+                    ]
+                }
+            ];
+
+            const recommendationsContainer = document.getElementById('recommendations');
+            const recommendationSelect = document.getElementById('recommendation-select');
+
+            recommendationsData.forEach((rec, index) => {
+                const recId = `rec-${index + 1}`;
+                const title = `${index + 1}. ${rec.title}`;
+                
+                // Create accordion item
+                const accordionItem = document.createElement('div');
+                accordionItem.className = 'bg-white rounded-lg shadow-md border border-gray-200';
+                accordionItem.innerHTML = `
+                    <button class="accordion-button w-full text-left p-5 flex justify-between items-center transition duration-300">
+                        <h3 class="text-lg font-semibold unfpa-blue-text">${title}</h3>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-sm font-medium px-3 py-1 rounded-full ${rec.priority === 'High' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'}">${rec.priority} Priority</span>
+                            <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-5 pb-5 text-gray-700">
+                        <p class="mb-4 font-medium">${rec.recommendationText}</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-4 rounded-lg border">
+                                <h4 class="font-bold mb-2 text-gray-800">Rationale</h4>
+                                <p class="text-sm">${rec.rationale}</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg border">
+                                <h4 class="font-bold mb-2 text-gray-800">Operational Implications</h4>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    ${rec.implications.map(item => `<li>${item}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                recommendationsContainer.appendChild(accordionItem);
+
+                // Populate form dropdown
+                const option = document.createElement('option');
+                option.value = title;
+                option.textContent = title;
+                recommendationSelect.appendChild(option);
+            });
+
+            // Accordion functionality
+            document.querySelectorAll('.accordion-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const icon = button.querySelector('svg');
+                    const isActive = button.classList.contains('active');
+                    
+                    document.querySelectorAll('.accordion-button').forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.querySelector('svg').classList.remove('rotate-180');
+                    });
+
+                    if (!isActive) {
+                        button.classList.add('active');
+                        icon.classList.add('rotate-180');
+                    }
+                });
+            });
+
+            // Form submission handler
+            const form = document.getElementById('feedbackForm');
+            const formMessage = document.getElementById('form-message');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const recommendation = document.getElementById('recommendation-select').value;
+                const suggestion = document.getElementById('suggestion').value;
+
+                const recipient = 'jahin@unfpa.org';
+                const subject = `Suggestion for Recommendation: "${recommendation}"`;
+                const body = `
+Hello,
+
+A new suggestion has been submitted through the UNFPA Bangladesh Recommendations webpage.
+
+-----------------------------------------
+Recommendation: ${recommendation}
+-----------------------------------------
+
+From: ${name}
+Email: ${email}
+
+Suggestion:
+${suggestion}
+                `;
+
+                const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                
+                // Open user's email client
+                window.location.href = mailtoLink;
+                
+                // Provide user feedback on the page
+                formMessage.innerHTML = `<p class="text-green-600 font-semibold">Thank you! Your email client has been opened to send your suggestion.</p>`;
+                form.reset();
+
+                setTimeout(() => {
+                    formMessage.innerHTML = '';
+                }, 5000);
+            });
+            
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
         });
-      });
-    });
+    </script>
 
-    // Toast logic on form submit
-    document.querySelectorAll('.feedback-form').forEach(form => {
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        const submitBtn = form.querySelector('button[type="submit"]');
-        submitBtn.disabled = true;
-        submitBtn.innerText = 'Sending...';
-        fetch(form.action, {
-          method: "POST",
-          headers: { "Accept": "app
+</body>
+</html>
