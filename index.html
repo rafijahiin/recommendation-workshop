@@ -1,250 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNFPA Bangladesh - 10th Country Programme Evaluation Recommendations</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-        }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .accordion-button.active .arrow-icon {
-            transform: rotate(180deg);
-        }
-        .unfpa-blue { background-color: #0072bc; }
-        .unfpa-blue-text { color: #0072bc; }
-        .priority-high { background-color: #dc2626; color: white; }
-        .priority-medium-high { background-color: #f97316; color: white; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNFPA Bangladesh - 10th Country Programme Evaluation Recommendations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --unfpa-orange:#F15A22; /* Primary brand */
+      --unfpa-cream:#FCF6EF;  /* Background */
+      --unfpa-navy:#083E62;   /* Text/Lines */
+      --unfpa-teal:#00B5AD;   /* Accent */
+    }
+    body{font-family:'Inter',sans-serif;background-color:var(--unfpa-cream);} 
+    .accordion-content{max-height:0;overflow:hidden;transition:max-height 0.3s ease-out;}
+    .accordion-button.active .arrow-icon{transform:rotate(180deg);} 
+    .brand-accent{color:var(--unfpa-orange);} 
+    .priority-high{background-color:#dc2626;color:#fff;} 
+    .priority-medium-high{background-color:#f97316;color:#fff;} 
+  </style>
 </head>
 <body>
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div>
+        <h1 class="text-xl md:text-2xl font-bold text-[var(--unfpa-navy)]">10th Country Programme Evaluation</h1>
+        <p class="text-sm md:text-base text-[var(--unfpa-navy)]/70">UNFPA Bangladesh Recommendations (2022–2026)</p>
+      </div>
+    </div>
+  </header>
 
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-                    <h1 class="text-xl md:text-2xl font-bold text-gray-800">10th Country Programme Evaluation</h1>
-                    <p class="text-sm md:text-md text-gray-600">UNFPA Bangladesh Recommendations (2022-2026)</p>
-                </div>
+  <!-- Intro -->
+  <main class="max-w-6xl mx-auto px-6 py-8">
+    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+      <h2 class="text-2xl font-bold mb-2 brand-accent">Provide Your Feedback</h2>
+      <p class="text-gray-700">Review each recommendation by clicking to expand. When you’re ready, scroll to the bottom and use the single feedback form to submit your ratings and any suggestions. This keeps all feedback in one place.</p>
+      <div class="mt-4 p-4 bg-orange-50 border-l-4 border-[var(--unfpa-orange)] text-[var(--unfpa-navy)] rounded-r-lg">
+        <p><strong class="font-semibold">Note:</strong> This page now links to <em>one</em> central Google Form (not per recommendation). If you later want auto-filled titles per item, we can switch back to per-item links.</p>
+      </div>
+    </div>
+
+    <!-- Recommendations list -->
+    <div id="recommendations-container" class="space-y-4"></div>
+
+    <!-- Single CTA to Form -->
+    <div class="mt-10 bg-white p-6 rounded-lg shadow-lg">
+      <h3 class="text-xl font-semibold text-[var(--unfpa-navy)] mb-3">Submit Your Feedback</h3>
+      <p class="text-gray-700 mb-6">Use this form to rate the importance of the recommendations and add suggestions for any you choose. (You can reference numbers/titles from above.)</p>
+      <a id="global-form-link" target="_blank" class="inline-block bg-[var(--unfpa-orange)] text-white font-bold py-2.5 px-6 rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--unfpa-orange)]">Open Feedback Form</a>
+    </div>
+  </main>
+
+  <footer class="bg-[var(--unfpa-navy)] text-white mt-12">
+    <div class="max-w-6xl mx-auto px-6 py-4 text-center">
+      <p>&copy; 2025 United Nations Population Fund (UNFPA) Bangladesh. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ---- DATA ----
+    const recommendations = [
+      { id:1, title:"ToC to articulate a stronger systems", priority:"High", recommendationText:"Adopt a unified, risk-informed Umbrella ToC that integrates the HDP nexus and system-strengthening. It makes megatrends and risk-to-budget choices explicit, clarifies shared outcomes and cross-thematic dependencies (HRH, supply chains, QA/supervision, referrals), and positions population data to steer policy and finance built to technical quality (clear assumptions, indicators, learning loops) as a live strategic-management tool.", rationale:"One Umbrella ToC gives the country programme a single, shared map for joint strategic monitoring and decision-making, replacing siloed thematic views with a common results frame that everyone co-owns. It aligns AWPs and budgets to the same outcomes and risks, enables timely cross-team course-correction, and anchors performance dialogues with government and partners. In periods of anticipated change (policy, climate, financing), the shared ToC also drives structured adaptive management—with pre-agreed triggers, scenario options, and a routine ToC review cadence—so the office’s proven agility becomes systematic practice. Crucially, it sharpens UNFPA’s advantage in systems change and impact orientation by focusing on core system functions (HRH, supply chains, QA/supervision, referrals) and by mapping causal links from norms and data use to service performance, and to outcomes/impact, enabling contribution analysis and PD-to-budget shifts that sustain equitable results at scale.", conclusions:"1, 3, 6", implications:[
+        "Design the Umbrella ToC: run a 4–6 week co-design sprint that maps HDP phases, megatrends, system functions, indicators, and assumptions/risks.",
+        "Transition roll-in plan: Q2 map all outputs/AWPs/budget lines to the ToC; Q3–Q4 full alignment—temporarily gate new pilots until they’re ToC-mapped.",
+        "One governance & review table: appoint a ToC Steward; hold monthly joint reviews (Programme+Ops+M&E+Humanitarian) with version control of ToC changes.",
+        "Minimal joint dashboard: 10–12 core indicators (HRH, supply reliability, QA/supervision, referral closure, equity disaggregation, crisis readiness) with district “system floors” tracked quarterly.",
+        "Risk-to-budget mechanics: pre-set contingency/pre-positioning lines, scenario playbooks, and bridge financing to protect resilience and equity lines during the transition year.",
+        "Update all IP MoUs/ToRs to the Umbrella ToC, joint ToC review with a 1-pager on assumptions/risks and equity results."
+      ], addressedTo:"Senior management and thematic teams, IPs" },
+
+      { id:2, title:"Replication and scaling-up", priority:"High", recommendationText:"Standardize → budgetize proven SRHR/GBV/A&Y models and data. Turn validated models and standards (midwifery protocols, GBV clinical pathways, referral closure, DHIS2/PD products) into the national routine by codifying them in norms/QA tools and assigning budget codes and packaging them for policy uptake (gazette/indicator compendium) and cross-country replication via South-South & Triangular Cooperation (SSTC).", rationale:"Scaling is durable when excellence is standardized, budgetized, and codified so ministries can adopt beyond pilot sites. Linking PD evidence to budget classifications turns analysis into allocation and sharpens equity (including adolescents and PwD). SSTC provides the diffusion engine (peer learning, cost benchmarking, pooled procurement), while systematization of good practices and lessons converts tacit knowledge into concise, reusable packages, accelerating policy uptake, quality, and replication.", conclusions:"3, 5, 10, 11, 12, 13", implications:[
+        "Define the standard package: one spec per model (norms/QA, indicators, referral closure).",
+        "Map to money (Q2): confirm budget codes/AWP lines for each package.",
+        "Quality & fidelity: QA toolkit + simple fidelity score (supervision done, DHIS2 completeness, equity fields filled).",
+        "Communication & transfer: a replication kit (policy brief, cost note, SOPs, indicator addendum, short explainer) + policy circular/gazette and SSTC twinning.",
+        "Systematization loop: quarterly harvest of good practices/lessons → validation → short case notes → updates to SOPs/indicator compendium & replication kits.",
+        "Adoption tracking: quarterly dashboard on adoption–quality–equity, with thresholds for scale-up.",
+        "Require IP use of the national QA toolkit and submission of a fidelity score (standards met, referral closure, DHIS2 completeness)."
+      ], addressedTo:"Senior Management; Thematic teams, M&E, teams at subnational level; APRO, IPs" },
+
+      { id:3, title:"Effective LNOB", priority:"High", recommendationText:"Make equity visibility & performance non-negotiable. Complete disability and marginalized fields across DHIS2/MPDSR/GBV information systems and adopt a lean LNOB indicator pack with explicit targets—% of adolescents, PWD, and marginalized reached (need-adjusted), referral-closure rates, facility accessibility compliance, data-completeness, and equity-tagged spend—reported in simple district dashboards with minimum floors and regular reviews.", rationale:"Transformational change needs more than disaggregation; it needs goals you manage to. A country-owned LNOB indicator set makes distributional effects visible, sets clear targets (e.g., parity/need-adjusted coverage, ≥85–90% closed-loop referrals, ≥95% data completeness, accessibility compliance floors, protected equity budgets), and hard-wires course-correction into monthly/quarterly management. Using the Washington Group approach for disability and standard fields ensures comparability, protects privacy, and aligns equity management across the HDP continuum from crisis to routine systems.", conclusions:"3, 6, 12, 13", implications:[
+        "Define LNOB indicator pack (Q1): 5–7 tracers (data completeness, need-adjusted coverage/parity index, referral closure, accessibility compliance, equity-tagged spend/execution).",
+        "Set targets & floors (Q2): national + district targets and minimum floors in AWPs and partner MoUs/ToRs.",
+        "ToC-linked monitoring loop: map each LNOB tracer to Umbrella ToC outcomes/assumptions and risk-to-budget links; monthly dashboards feed a quarterly ToC review, with logged changes and time-bound corrective actions.",
+        "Data quality & safeguards: brief training/supervision on WG-SS fields; privacy and survivor-safety protocols.",
+        "Finance link: tie equity floors to disbursement calendars; protect LNOB lines during re-phasing and mid-year reallocations.",
+        "Insert LNOB targets/floors in IP MoUs (e.g., ≥95% data completeness; ≥85–90% referral closure; accessibility compliance)."
+      ], addressedTo:"Senior management, thematic teams, IPs" },
+
+      { id:4, title:"Continuity and efficiency", priority:"High", recommendationText:"Fix execution bottlenecks to protect timeliness, equity, and value for money. Align cash release, approvals/ERP, procurement, and last-mile logistics to one delivery calendar so services flow steadily (not Q4-compressed), unit costs fall, and LNOB lines for adolescents, persons with disabilities (PWD), and are not crowded out.", rationale:"Stop–start delivery inflates costs (emergency buys, idle resources), weakens quality, and disproportionately harms LNOB outreach. Predictable disbursement and procurement lead times, reliable stocks, and clean warehouse-to-facility handoffs are core determinants of results and VfM—they convert planned outputs into real, equitable coverage and make spend more efficient.", conclusions:"3, 4, 5", implications:[
+        "One delivery calendar: lock monthly cash-release and procurement schedules to the AWP; publish Q1–Q4 milestones.",
+        "Lead-time & stock floors: procurement SLAs (e.g., ≤45 days competitive; ≤10 days call-off) and ≥95% stock reliability for tracer commodities.",
+        "Last-mile basics: standard issue/receipt tracking, warehouse→facility handoffs, and referral transport slots to avoid stop–start service.",
+        "Forecasting & S&OP: align activity calendars, cash-flow, and stock forecasts; cap Q4 spend share (e.g., ≤30%) to prevent compression.",
+        "ToC-linked ops dashboard: track on-time disbursement, cycle time, stockouts, and LNOB execution rates; review quarterly in the Umbrella ToC session with time-bound fixes."
+      ], addressedTo:"Operations, thematic teams" },
+
+      { id:5, title:"Funding to financing", priority:"High", recommendationText:"Shift from funding to financing with a VfM/ROI compact. Move from short-cycle, projectized funding to domestically anchored, multi-year financing that carries proven SRHR/GBV/A&Y/PD models and resilience lines across the HDP continuum through fiscal cycles, by agreeing a compact with MoF/ERD, costing policy wins into MTEF/budget codes/AWPs, and tracking Value-for-Money/Return-on-Investment and benefit incidence for adolescents, persons with disabilities (PWD).", rationale:"Durable results require appropriations, not ad-hoc grants. Financing that is coded in MTEF and executed through routine budgets stabilizes service continuity, protects LNOB lines, and rewards efficiency via VfM/ROI evidence (unit costs, cost-per-outcome, equity incidence). A clear compact with finance authorities (MoF/ERD) translates evidence and standards into fiscal commitments, strengthens credibility with IFIs/private partners, and aligns humanitarian preparedness and system strengthening with sustainable resources.", conclusions:"5, 6, 10, 11, 12", implications:[
+        "Funding to finance compact (Q1): agree the Funding-to-Financing roadmap with MoF/ERD (scope, timelines, roles).",
+        "Cost & code (Q2): cost policy wins and assign MTEF/budget codes/AWP lines (incl. resilience & LNOB).",
+        "Efficiency levers: expand pooled procurement/framework agreements; introduce a lite VfM/ROI pack in AWP reviews and budget conferences.",
+        "Equity finance: set equity floors and benefit-incidence targets for adolescents and PWD, track execution.",
+        "Bridge the transition: pre-arrange bridge financing/disbursement calendars to avoid Q4 compression; report quarterly to the Umbrella ToC review."
+      ], addressedTo:"Senior management, M&E, thematic teams, Operations." },
+
+      { id:6, title:"From innovations to strategic innovation", priority:"Medium-high", recommendationText:"Make strategic innovation an office function with a clear scale pathway (incl. youth platforms). Treat innovation as mission-aligned, ToC-linked strategic innovation—not ad-hoc pilots—guided by one Innovation-to-Scale Protocol (proof-of-concept → standard/indicator → budget line/OPS), a light innovation registry, and inclusion/safety gates (accessibility for PWD, adolescent-friendly design, safeguards, data privacy). Package validated models for policy uptake and SSTC replication.", rationale:"Strategic innovation focuses scarce resources on problems that matter for the Umbrella ToC, producing decision-grade evidence for norms, indicators, budgets, and operations. It also lets short, time-boxed projects run as “labs” with hypotheses, ethics/safety checks, equity & VfM metrics, and pass/fail criteria, so even brief grants yield validated models or fast stops. This shifts the mindset from scattered piloting to structured validation and scale, strengthening the normative role, investability, and portability via SSTC.", conclusions:"3, 6, 9", implications:[
+        "Stand up the protocol (Q1): approve stage-gates; form a small Strategic Innovation Review Board; name M&E as scale-gate secretariat.",
+        "Equity & safety gates: require PWD accessibility, adolescent-friendly features, safeguards, privacy/do-no-harm compliance before “pass-to-scale.”",
+        "Registry & briefs: 1-page evidence/cost note with VfM & equity readout per model; publish adoption status.",
+        "Budget & procurement enablement: assign budget codes, add to catalogues, use pooled procurement/bridge financing for first-wave roll-out.",
+        "ToC-linked scale dashboard: track adoption rate, time-to-scale, % standardized with budget lines, equity outcomes; review quarterly in the Umbrella ToC session; prep SSTC replication kits.",
+        "Run IP pilots as time-boxed innovation labs with hypotheses, equity/safety gates (accessibility for PWD, adolescent-friendly, safeguards, data privacy) and pass-to-scale criteria registered in the innovation registry"
+      ], addressedTo:"Thematic teams, M&E, APRO, IPs" }
+    ];
+
+    // ---- FORM URL (single) ----
+    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeq-fY6Tc_Mb-n47HEj-1LlmCwznRKNLdPlTkfCbdARG8jbMA/viewform";
+
+    // ---- Build Recommendation Cards ----
+    const container = document.getElementById('recommendations-container');
+    recommendations.forEach(rec => {
+      const priorityClass = rec.priority.toLowerCase().replace(' ','-');
+      const card = document.createElement('div');
+      card.className = 'border border-gray-200 rounded-lg shadow-sm bg-white';
+      card.innerHTML = `
+        <button class="accordion-button w-full flex items-center justify-between p-5 text-left text-[var(--unfpa-navy)] focus:outline-none focus:ring-2 focus:ring-[var(--unfpa-teal)]/40">
+          <div class="flex items-center gap-3">
+            <span class="text-lg font-semibold brand-accent">${rec.id}.</span>
+            <span class="flex-1 text-lg font-semibold">${rec.title}</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="priority-${priorityClass} text-xs font-semibold px-2.5 py-1 rounded-full">${rec.priority}</span>
+            <svg class="arrow-icon w-6 h-6 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+        </button>
+        <div class="accordion-content">
+          <div class="p-6 border-t border-gray-200 bg-gray-50">
+            <p class="text-gray-800 font-medium mb-6">${rec.recommendationText}</p>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <h4 class="font-bold text-md brand-accent mb-2">Rationale</h4>
+                <p class="text-sm text-gray-700">${rec.rationale}</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-md brand-accent mb-2">Operational Implications</h4>
+                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  ${rec.implications.map(i=>`<li>${i}</li>`).join('')}
+                </ul>
+              </div>
             </div>
-        </div>
-    </header>
-
-    <main class="container mx-auto px-6 py-8">
-        <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl font-bold mb-2 unfpa-blue-text">Provide Your Feedback</h2>
-            <p class="text-gray-700">
-                Below are the key recommendations from the 10th Country Programme Evaluation. Please review each recommendation by clicking on it to expand the details. Use the "Provide Suggestion" button to submit your valuable feedback via a Google Form. Your input is crucial for refining and implementing these strategic priorities.
-            </p>
-             <div class="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 text-blue-800 rounded-r-lg">
-                <p><strong class="font-semibold">Note for Administrators:</strong> To receive suggestions, please create a Google Form with a field for the recommendation title and a field for the suggestion text. Then, replace the placeholder `YOUR_GOOGLE_FORM_LINK_HERE` in the code with your actual Google Form link.</p>
+            <div class="grid md:grid-cols-2 gap-6 text-sm">
+              <div><strong class="font-semibold text-gray-800">Addressed to:</strong> <span class="text-gray-700">${rec.addressedTo}</span></div>
+              <div><strong class="font-semibold text-gray-800">Linked to Conclusions:</strong> <span class="text-gray-700">${rec.conclusions}</span></div>
             </div>
-        </div>
+          </div>
+        </div>`;
+      container.appendChild(card);
+    });
 
-        <div id="recommendations-container" class="space-y-4">
-            <!-- Recommendations will be dynamically inserted here -->
-        </div>
-    </main>
+    // ---- Accordion ----
+    const buttons = () => document.querySelectorAll('.accordion-button');
+    const contents = () => document.querySelectorAll('.accordion-content');
 
-    <footer class="bg-gray-800 text-white mt-12">
-        <div class="container mx-auto px-6 py-4 text-center">
-            <p>&copy; 2025 United Nations Population Fund (UNFPA) Bangladesh. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // --- DATA FROM THE DOCUMENT ---
-        const recommendations = [
-            {
-                id: 1,
-                title: "ToC to articulate a stronger systems",
-                priority: "High",
-                recommendationText: "Adopt a unified, risk-informed Umbrella ToC that integrates the HDP nexus and system-strengthening. It makes megatrends and risk-to-budget choices explicit, clarifies shared outcomes and cross-thematic dependencies (HRH, supply chains, QA/supervision, referrals), and positions population data to steer policy and finance built to technical quality (clear assumptions, indicators, learning loops) as a live strategic-management tool.",
-                rationale: "One Umbrella ToC gives the country programme a single, shared map for joint strategic monitoring and decision-making, replacing siloed thematic views with a common results frame that everyone co-owns. It aligns AWPs and budgets to the same outcomes and risks, enables timely cross-team course-correction, and anchors performance dialogues with government and partners. In periods of anticipated change (policy, climate, financing), the shared ToC also drives structured adaptive management—with pre-agreed triggers, scenario options, and a routine ToC review cadence—so the office’s proven agility becomes systematic practice. Crucially, it sharpens UNFPA’s advantage in systems change and impact orientation by focusing on core system functions (HRH, supply chains, QA/supervision, referrals) and by mapping causal links from norms and data use to service performance, and to outcomes/impact, enabling contribution analysis and PD-to-budget shifts that sustain equitable results at scale.",
-                conclusions: "1, 3, 6",
-                implications: [
-                    "Design the Umbrella ToC: run a 4–6 week co-design sprint that maps HDP phases, megatrends, system functions, indicators, and assumptions/risks.",
-                    "Transition roll-in plan: Q2 map all outputs/AWPs/budget lines to the ToC; Q3–Q4 full alignment—temporarily gate new pilots until they’re ToC-mapped.",
-                    "One governance & review table: appoint a ToC Steward; hold monthly joint reviews (Programme+Ops+M&E+Humanitarian) with version control of ToC changes.",
-                    "Minimal joint dashboard: 10–12 core indicators (HRH, supply reliability, QA/supervision, referral closure, equity disaggregation, crisis readiness) with district “system floors” tracked quarterly.",
-                    "Risk-to-budget mechanics: pre-set contingency/pre-positioning lines, scenario playbooks, and bridge financing to protect resilience and equity lines during the transition year.",
-                    "Update all IP MoUs/ToRs to the Umbrella ToC, joint ToC review with a 1-pager on assumptions/risks and equity results."
-                ],
-                addressedTo: "Senior management and thematic teams, IPs"
-            },
-            {
-                id: 2,
-                title: "Replication and scaling-up",
-                priority: "High",
-                recommendationText: "Standardize → budgetize proven SRHR/GBV/A&Y models and data. Turn validated models and standards (midwifery protocols, GBV clinical pathways, referral closure, DHIS2/PD products) into the national routine by codifying them in norms/QA tools and assigning budget codes and packaging them for policy uptake (gazette/indicator compendium) and cross-country replication via South-South & Triangular Cooperation (SSTC).",
-                rationale: "Scaling is durable when excellence is standardized, budgetized, and codified so ministries can adopt beyond pilot sites. Linking PD evidence to budget classifications turns analysis into allocation and sharpens equity (including adolescents and PwD). SSTC provides the diffusion engine (peer learning, cost benchmarking, pooled procurement), while systematization of good practices and lessons converts tacit knowledge into concise, reusable packages, accelerating policy uptake, quality, and replication.",
-                conclusions: "3, 5, 10, 11, 12, 13",
-                implications: [
-                    "Define the standard package: one spec per model (norms/QA, indicators, referral closure).",
-                    "Map to money (Q2): confirm budget codes/AWP lines for each package.",
-                    "Quality & fidelity: QA toolkit + simple fidelity score (supervision done, DHIS2 completeness, equity fields filled).",
-                    "Communication & transfer: a replication kit (policy brief, cost note, SOPs, indicator addendum, short explainer) + policy circular/gazette and SSTC twinning.",
-                    "Systematization loop: quarterly harvest of good practices/lessons → validation → short case notes → updates to SOPs/indicator compendium & replication kits.",
-                    "Adoption tracking: quarterly dashboard on adoption–quality–equity, with thresholds for scale-up.",
-                    "Require IP use of the national QA toolkit and submission of a fidelity score (standards met, referral closure, DHIS2 completeness)."
-                ],
-                addressedTo: "Senior Management; Thematic teams, M&E, teams at subnational level; APRO, IPs"
-            },
-            {
-                id: 3,
-                title: "Effective LNOB",
-                priority: "High",
-                recommendationText: "Make equity visibility & performance non-negotiable. Complete disability and marginalized fields across DHIS2/MPDSR/GBV information systems and adopt a lean LNOB indicator pack with explicit targets—% of adolescents, PWD, and marginalized reached (need-adjusted), referral-closure rates, facility accessibility compliance, data-completeness, and equity-tagged spend—reported in simple district dashboards with minimum floors and regular reviews.",
-                rationale: "Transformational change needs more than disaggregation; it needs goals you manage to. A country-owned LNOB indicator set makes distributional effects visible, sets clear targets (e.g., parity/need-adjusted coverage, ≥85–90% closed-loop referrals, ≥95% data completeness, accessibility compliance floors, protected equity budgets), and hard-wires course-correction into monthly/quarterly management. Using the Washington Group approach for disability and standard fields ensures comparability, protects privacy, and aligns equity management across the HDP continuum from crisis to routine systems.",
-                conclusions: "3, 6, 12, 13",
-                implications: [
-                    "Define LNOB indicator pack (Q1): 5–7 tracers (data completeness, need-adjusted coverage/parity index, referral closure, accessibility compliance, equity-tagged spend/execution).",
-                    "Set targets & floors (Q2): national + district targets and minimum floors in AWPs and partner MoUs/ToRs.",
-                    "ToC-linked monitoring loop: map each LNOB tracer to Umbrella ToC outcomes/assumptions and risk-to-budget links; monthly dashboards feed a quarterly ToC review, with logged changes and time-bound corrective actions.",
-                    "Data quality & safeguards: brief training/supervision on WG-SS fields; privacy and survivor-safety protocols.",
-                    "Finance link: tie equity floors to disbursement calendars; protect LNOB lines during re-phasing and mid-year reallocations.",
-                    "Insert LNOB targets/floors in IP MoUs (e.g., ≥95% data completeness; ≥85–90% referral closure; accessibility compliance)."
-                ],
-                addressedTo: "Senior management, thematic teams, IPs"
-            },
-            {
-                id: 4,
-                title: "Continuity and efficiency",
-                priority: "High",
-                recommendationText: "Fix execution bottlenecks to protect timeliness, equity, and value for money. Align cash release, approvals/ERP, procurement, and last-mile logistics to one delivery calendar so services flow steadily (not Q4-compressed), unit costs fall, and LNOB lines for adolescents, persons with disabilities (PWD), and are not crowded out.",
-                rationale: "Stop–start delivery inflates costs (emergency buys, idle resources), weakens quality, and disproportionately harms LNOB outreach. Predictable disbursement and procurement lead times, reliable stocks, and clean warehouse-to-facility handoffs are core determinants of results and VfM—they convert planned outputs into real, equitable coverage and make spend more efficient.",
-                conclusions: "3, 4, 5",
-                implications: [
-                    "One delivery calendar: lock monthly cash-release and procurement schedules to the AWP; publish Q1–Q4 milestones.",
-                    "Lead-time & stock floors: procurement SLAs (e.g., ≤45 days competitive; ≤10 days call-off) and ≥95% stock reliability for tracer commodities.",
-                    "Last-mile basics: standard issue/receipt tracking, warehouse→facility handoffs, and referral transport slots to avoid stop–start service.",
-                    "Forecasting & S&OP: align activity calendars, cash-flow, and stock forecasts; cap Q4 spend share (e.g., ≤30%) to prevent compression.",
-                    "ToC-linked ops dashboard: track on-time disbursement, cycle time, stockouts, and LNOB execution rates; review quarterly in the Umbrella ToC session with time-bound fixes."
-                ],
-                addressedTo: "Operations, thematic teams"
-            },
-            {
-                id: 5,
-                title: "Funding to financing",
-                priority: "High",
-                recommendationText: "Shift from funding to financing with a VfM/ROI compact. Move from short-cycle, projectized funding to domestically anchored, multi-year financing that carries proven SRHR/GBV/A&Y/PD models and resilience lines across the HDP continuum through fiscal cycles, by agreeing a compact with MoF/ERD, costing policy wins into MTEF/budget codes/AWPs, and tracking Value-for-Money/Return-on-Investment and benefit incidence for adolescents, persons with disabilities (PWD).",
-                rationale: "Durable results require appropriations, not ad-hoc grants. Financing that is coded in MTEF and executed through routine budgets stabilizes service continuity, protects LNOB lines, and rewards efficiency via VfM/ROI evidence (unit costs, cost-per-outcome, equity incidence). A clear compact with finance authorities (MoF/ERD) translates evidence and standards into fiscal commitments, strengthens credibility with IFIs/private partners, and aligns humanitarian preparedness and system strengthening with sustainable resources.",
-                conclusions: "5, 6, 10, 11, 12",
-                implications: [
-                    "Funding to finance compact (Q1): agree the Funding-to-Financing roadmap with MoF/ERD (scope, timelines, roles).",
-                    "Cost & code (Q2): cost policy wins and assign MTEF/budget codes/AWP lines (incl. resilience & LNOB).",
-                    "Efficiency levers: expand pooled procurement/framework agreements; introduce a lite VfM/ROI pack in AWP reviews and budget conferences.",
-                    "Equity finance: set equity floors and benefit-incidence targets for adolescents and PWD, track execution.",
-                    "Bridge the transition: pre-arrange bridge financing/disbursement calendars to avoid Q4 compression; report quarterly to the Umbrella ToC review."
-                ],
-                addressedTo: "Senior management, M&E, thematic teams, Operations."
-            },
-            {
-                id: 6,
-                title: "From innovations to strategic innovation",
-                priority: "Medium-high",
-                recommendationText: "Make strategic innovation an office function with a clear scale pathway (incl. youth platforms). Treat innovation as mission-aligned, ToC-linked strategic innovation—not ad-hoc pilots—guided by one Innovation-to-Scale Protocol (proof-of-concept → standard/indicator → budget line/OPS), a light innovation registry, and inclusion/safety gates (accessibility for PWD, adolescent-friendly design, safeguards, data privacy). Package validated models for policy uptake and SSTC replication.",
-                rationale: "Strategic innovation focuses scarce resources on problems that matter for the Umbrella ToC, producing decision-grade evidence for norms, indicators, budgets, and operations. It also lets short, time-boxed projects run as “labs” with hypotheses, ethics/safety checks, equity & VfM metrics, and pass/fail criteria, so even brief grants yield validated models or fast stops. This shifts the mindset from scattered piloting to structured validation and scale, strengthening the normative role, investability, and portability via SSTC.",
-                conclusions: "3, 6, 9",
-                implications: [
-                    "Stand up the protocol (Q1): approve stage-gates; form a small Strategic Innovation Review Board; name M&E as scale-gate secretariat.",
-                    "Equity & safety gates: require PWD accessibility, adolescent-friendly features, safeguards, privacy/do-no-harm compliance before “pass-to-scale.”",
-                    "Registry & briefs: 1-page evidence/cost note with VfM & equity readout per model; publish adoption status.",
-                    "Budget & procurement enablement: assign budget codes, add to catalogues, use pooled procurement/bridge financing for first-wave roll-out.",
-                    "ToC-linked scale dashboard: track adoption rate, time-to-scale, % standardized with budget lines, equity outcomes; review quarterly in the Umbrella ToC session; prep SSTC replication kits.",
-                    "Run IP pilots as time-boxed innovation labs with hypotheses, equity/safety gates (accessibility for PWD, adolescent-friendly, safeguards, data privacy) and pass-to-scale criteria registered in the innovation registry"
-                ],
-                addressedTo: "Thematic teams, M&E, APRO, IPs"
-            }
-        ];
-
-        // --- DYNAMICALLY BUILD THE PAGE ---
-        const container = document.getElementById('recommendations-container');
-        
-        // This is a placeholder. Replace it with your actual Google Form link.
-        // The link should be for a pre-filled form if possible.
-        const GOOGLE_FORM_BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeq-fY6Tc_Mb-n47HEj-1LlmCwznRKNLdPlTkfCbdARG8jbMA/viewform";
-
-
-        recommendations.forEach(rec => {
-            const priorityClass = rec.priority.toLowerCase().replace(' ', '-');
-            const googleFormLink = `${GOOGLE_FORM_BASE_URL}?entry.12345=${encodeURIComponent('Rec ' + rec.id + ': ' + rec.title)}`; // Example: Replace entry.12345 with your actual field ID
-
-            const element = document.createElement('div');
-            element.className = 'border border-gray-200 rounded-lg shadow-sm bg-white';
-            element.innerHTML = `
-                <button class="accordion-button w-full flex items-center justify-between p-5 text-left text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                    <div class="flex items-center">
-                        <span class="text-lg font-semibold unfpa-blue-text mr-4">${rec.id}.</span>
-                        <span class="flex-1 text-lg font-semibold text-gray-800">${rec.title}</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="priority-${priorityClass} text-xs font-semibold mr-4 px-2.5 py-1 rounded-full">${rec.priority}</span>
-                        <svg class="arrow-icon w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                </button>
-                <div class="accordion-content">
-                    <div class="p-6 border-t border-gray-200 bg-gray-50">
-                        <p class="text-gray-700 font-medium mb-6">${rec.recommendationText}</p>
-                        
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <h4 class="font-bold text-md unfpa-blue-text mb-2">Rationale</h4>
-                                <p class="text-sm text-gray-600">${rec.rationale}</p>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-md unfpa-blue-text mb-2">Operational Implications</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                    ${rec.implications.map(item => `<li>${item}</li>`).join('')}
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="grid md:grid-cols-2 gap-6 text-sm">
-                             <div>
-                                <strong class="font-semibold text-gray-700">Addressed to:</strong>
-                                <span class="text-gray-600">${rec.addressedTo}</span>
-                            </div>
-                             <div>
-                                <strong class="font-semibold text-gray-700">Linked to Conclusions:</strong>
-                                <span class="text-gray-600">${rec.conclusions}</span>
-                            </div>
-                        </div>
-
-                        <div class="mt-8 text-center">
-                            <a href="${googleFormLink}" target="_blank" class="inline-block bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
-                                Provide Suggestion
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            `;
-            container.appendChild(element);
+    const attachAccordion = () => {
+      buttons().forEach(btn => {
+        btn.addEventListener('click', () => {
+          const content = btn.nextElementSibling;
+          btn.classList.toggle('active');
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+          }
         });
+      });
+    };
 
-        // --- ACCORDION FUNCTIONALITY ---
-        const accordionButtons = document.querySelectorAll('.accordion-button');
-        accordionButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                button.classList.toggle('active');
+    attachAccordion();
 
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                }
-            });
-        });
-
-    </script>
+    // ---- Single Form CTA ----
+    document.getElementById('global-form-link').href = GOOGLE_FORM_URL;
+  </script>
 </body>
 </html>
